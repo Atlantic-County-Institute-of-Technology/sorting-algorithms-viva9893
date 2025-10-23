@@ -1,28 +1,35 @@
-# 01_bubble_sort.py
+# 01_selection_sort.py
 # author: Cesar Vivas
 # last update:
 
 # import random library for list generation
 import random
 
+
+
 # generate a list of 10 random numbers from -100 to 100
 values = [random.randint(-100, 100) for i in range(10)]
 print(f"Initial Values = {values}")
 
 
-# perform the bubblesort
+# perform the selection sort
 
 def selection_sort(values):
-    for i in range(len(values)):
-        #
-        min_index = i
+    sorting_actions = 0
 
+    for i in range(len(values)):
+
+        min_index = i
+        # assume j begins at index 1 directly infrom index i
         for j in range(i+1,len(values)):
 
             if values[min_index] > values[j]:
+                # if j has value less than i then it will become the new min index
                 min_index = j
-            #sort
+                # asumme a sorting actions will always excute when j becomes new min
+                sorting_actions += 1
 
+        # sorting action (SWAP) if  min_index  does not come before the second index
         values[i], values[min_index] = values[min_index], values[i]
 
     return values
