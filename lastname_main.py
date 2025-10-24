@@ -16,12 +16,12 @@ def main():
           "[-] 1. generate a list \n")
 
 
-    # key variables
+    # key variables and imports 
     indices = 10
-
-
-
-
+    
+    from bubble_sort import bubble_sort
+    from insertion_sort import insertion_sort
+    from selection_sort import selection_sort
 
     try:
         selection = int(input("Please select an option (0-1): "))
@@ -72,28 +72,29 @@ def main():
                             
                 elif selection_0 == 2: #option 2 - apply a sorting algorithm.
                     while True:
-                          print("[-] 1. bubble_sort\n"
+                        print(values)
+                        print("[-] 1. bubble_sort\n"
                                 "[-] 2. selection_sort\n"
                                 "[-] 3. insertion_sort \n" 
                       )
 
                         try:
-                            selection_2 = int(input("Please select an option(1-3) : "))
+                            selection_2 = int(input("Please indicate an algorthim to sort the list (1-3) : "))
                         except ValueError:
                             print("(Invalid input")
                             
-                            if selection_2 == 1: 
-                                bubble_sort(values) 
-                                print(values)
-                                break 
-                             if selection_2 == 2: 
-                                selection_sort(values) 
-                                print(values)
-                                break 
-                            if selection_3 == 2: 
-                                insertion_sort(values) 
-                                print(values)
-                                break 
+                        if selection_2 == 1: 
+                            bubble_sort(values) 
+                            print(values)
+                                 
+                        elif selection_2 == 2: 
+                            selection_sort(values) 
+                            print(values)
+                                 
+                        elif selection_2 == 3: 
+                            insertion_sort(values) 
+                            print(values)
+                                
 
 
 

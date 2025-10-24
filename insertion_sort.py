@@ -1,12 +1,7 @@
 # 02_insertion_sort.py
 # author: Cesar Vivas
 # last update:
-# import random library for list generation
-import random
 
-# generate a list of 10 random numbers from -100 to 100
-values = [random.randint(-100, 100) for i in range(10)]
-print(f"Initial Values = {values}")
 
 
 
