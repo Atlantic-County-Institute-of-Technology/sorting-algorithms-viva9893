@@ -70,9 +70,30 @@ def main():
                         except AssertionError:
                             print("Value must be an integer an postive, try again")
                             
-                elif selection_0 == 2: #option 2 - apply a sorting algorithm. 
-                    print("     ")
+                elif selection_0 == 2: #option 2 - apply a sorting algorithm.
+                    while True:
+                          print("[-] 1. bubble_sort\n"
+                                "[-] 2. selection_sort\n"
+                                "[-] 3. insertion_sort \n" 
+                      )
 
+                        try:
+                            selection_2 = int(input("Please select an option(1-3) : "))
+                        except ValueError:
+                            print("(Invalid input")
+                            
+                            if selection_2 == 1: 
+                                bubble_sort(values) 
+                                print(values)
+                                break 
+                             if selection_2 == 2: 
+                                selection_sort(values) 
+                                print(values)
+                                break 
+                            if selection_3 == 2: 
+                                insertion_sort(values) 
+                                print(values)
+                                break 
 
 
 
