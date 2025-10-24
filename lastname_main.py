@@ -3,6 +3,10 @@
 # author: Cesar Vivas
 # last update:
 
+#imports 
+from bubble_sort import bubble_sort
+from insertion_sort import insertion_sort
+from selection_sort import selection_sort
 
 
 def main():
@@ -12,33 +16,25 @@ def main():
     print("By using this application you have agree to generating random list  to run different sorting algorithms ")
     print("If at time you wish not to continue, press '0', and you will be allowed to leave the program")
 
-    print("[-] 0. Exit Site\n"
-          "[-] 1. generate a list \n")
-
-
     # key variables and imports 
     indices = 10
     
-    from bubble_sort import bubble_sort
-    from insertion_sort import insertion_sort
-    from selection_sort import selection_sort
+    while True:
+        print("[-] 0. Exit Site\n"
+      "[-] 1. generate a list \n")
+        try:
+            selection = int(input("Please select an option (0-1): "))
+        except ValueError:
+            print("(Invalid input")
 
-    try:
-        selection = int(input("Please select an option (0-1): "))
-    except ValueError:
-        print("(Invalid input")
-
-    if selection == 0:
-        print("Program is existing")
-        exit()
-    elif selection == 1:
-        # code will start with a preset list of 10
-        while True:
-
-            import random
+        if selection == 0:
+            print("Program is existing")
+            exit()
+        elif selection == 1:
+             # code will start with a preset list of 10
             # generate a list of 10 random numbers from -100 to 100
-            values = [random.randint(-1000, 1000) for i in range(indices)]
-            print(f"list = {values}")
+            list = [random.randint(-1000, 1000) for i in range(indices)]
+            print(f"Generated list = {list}")
 
             while True:
                 print("[-] 0. Exit\n"
@@ -72,28 +68,34 @@ def main():
                             
                 elif selection_0 == 2: #option 2 - apply a sorting algorithm.
                     while True:
-                        print(values)
+                
                         print("[-] 1. bubble_sort\n"
-                                "[-] 2. selection_sort\n"
-                                "[-] 3. insertion_sort \n" 
+                            "[-] 2. selection_sort\n"
+                            "[-] 3. insertion_sort \n" 
                       )
 
                         try:
                             selection_2 = int(input("Please indicate an algorthim to sort the list (1-3) : "))
                         except ValueError:
                             print("(Invalid input")
-                            
+                            continue
                         if selection_2 == 1: 
-                            bubble_sort(values) 
-                            print(values)
-                                 
+                            sorted_list = bubble_sort(list) 
+                            print(f"old list = {list} ")
+                            print(f"sorted list = {sorted_list}")
+                            break 
                         elif selection_2 == 2: 
-                            selection_sort(values) 
-                            print(values)
-                                 
+                            sorted_list = selection_sort(list) 
+                            print(f"old list = {list} ")
+                            print(f"sorted list = {sorted_list}")
+                            break
                         elif selection_2 == 3: 
-                            insertion_sort(values) 
-                            print(values)
+                            sorted_list = insertion_sort(list)
+                            print(f"old list = {list} ")
+                            print(f"sorted list = {sorted_list}")
+                            break
+                        else:
+                            print("invalid choice")
                                 
 
 
