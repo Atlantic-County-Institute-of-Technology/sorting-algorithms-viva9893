@@ -1,6 +1,6 @@
 # 01_selection_sort.py
 # author: Cesar Vivas
-# last update:
+# last update:10.24.25
 
 
 
@@ -23,8 +23,8 @@ def selection_sort(values):
 
         # sorting action (SWAP) if  min_index  does not come before the second index
         values[i], values[min_index] = values[min_index], values[i]
-
+        print(f"sorting actions = {sorting_actions}")
     return values
-print(f"Sorted Values = { selection_sort(values)}")
+
 
 
