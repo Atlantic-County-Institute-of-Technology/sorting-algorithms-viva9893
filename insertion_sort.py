@@ -1,6 +1,6 @@
 # 02_insertion_sort.py
 # author: Cesar Vivas
-# last update:
+# last update:10.24.25
 
 
 
@@ -28,4 +28,3 @@ def insertion_sort(values):
             sorting_actions += 1
     print(f"sorting actions = {sorting_actions}")
     return values
-print(f"Sorted Values = {insertion_sort(values)}")
